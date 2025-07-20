@@ -47,7 +47,7 @@ public class OrderService {
        Order order = orderRepository.findById(orderId).orElseThrow();
         System.out.println("ORder is :" +order.toString());
         System.out.println("User id is : "+order.getUserId());
-        UserDto userDto = userClient.getUserById(order.getId());
+        UserDto userDto = userClient.getUserById(order.getUserId());
         return OrderResponse.builder()
                 .id(order.getId())
                 .userId(order.getUserId())
